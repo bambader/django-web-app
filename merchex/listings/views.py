@@ -18,3 +18,4 @@ def about(request):
 def contact(request):
 
     return HttpResponse('<h1>Nous contacter</h1> <p>Contact: 0033 05 45 78 59 65</p>')
+
