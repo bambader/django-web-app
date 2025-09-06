@@ -21,11 +21,13 @@ def hello(request):
 
         <ul>
 
-            <li>{bands[0].name}</li>
+            <li>{bands[0].title}</li>
 
-            <li>{bands[1].name}</li>
+            <li>{bands[1].title}</li>
 
-            <li>{bands[2].name}</li>
+            <li>{bands[2].title}</li>
+
+            <li>{bands[3].title}</li>
 
         </ul>
 
