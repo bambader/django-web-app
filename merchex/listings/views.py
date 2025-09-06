@@ -12,26 +12,11 @@ from listings.models import Band
 def hello(request):
 
     bands = Band.objects.all()
+    return render(request,
+    'listings/hello.html',
+    {'bands': bands})
 
-    return HttpResponse(f"""
 
-        <h1>Hello Django !</h1>
-
-        <p>Mes groupes préférés sont :<p>
-
-        <ul>
-
-            <li>{bands[0].title}</li>
-
-            <li>{bands[1].title}</li>
-
-            <li>{bands[2].title}</li>
-
-            <li>{bands[3].title}</li>
-
-        </ul>
-
-""")
 
 def about(request):
 
