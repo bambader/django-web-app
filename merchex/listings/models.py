@@ -11,13 +11,28 @@ class Band(models.Model):
         ALTERNATIVE_ROCK = 'AR'
 
     name = models.fields.CharField(max_length=100)
-    genre = models.fields.CharField(max_length=50)
+    genre = models.fields.CharField(choices=Genre.choices, max_length=50)
     biography = models.fields.CharField(max_length=1000)
     year_formed = models.fields.IntegerField(
     validators=[MinValueValidator(1900), MaxValueValidator(2021)])
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
 
-    def __str__(self):
+class Listing(models.Model):
 
-        return f'{self.name}'
+    class ListingType(models.TextChoices):
+        RECORDS = 'R'
+        CLOTHING = 'C'
+        POSTERS = 'P'
+        MISC = 'AMR'
+
+    title = models.fields.CharField(max_length=100)
+    description = models.fields.CharField(max_length=1000)
+    sold = models.fields.BooleanField(default=False)
+    year = models.fields.IntegerField(
+        null=True,
+        validators=[MinValueValidator(1900),
+                    MaxValueValidator(2021)]
+    )
+    type = models.fields.CharField(choices=ListingType.choices, max_length=50)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)

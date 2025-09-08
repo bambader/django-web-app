@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from listings.models import Band
+from listings.models import Band, Listing
 
 
 class BandAdmin(admin.ModelAdmin):  # nous insérons ces deux lignes..
@@ -10,3 +10,4 @@ class BandAdmin(admin.ModelAdmin):  # nous insérons ces deux lignes..
 
 admin.site.register(Band, BandAdmin) # nous modifions cette ligne, en ajoutant un deuxième argument
 
+admin.site.register(Listing)
