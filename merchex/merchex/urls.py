@@ -21,7 +21,7 @@ from listings import views
 
 urlpatterns = [
 path('admin/', admin.site.urls),
-path('hello/', views.hello),
+path('bands/', views.band_list), # mise à jour du chemin de la vue
 path('about-us/', views.about),
 path('contact-us/', views.contact)
 ]
