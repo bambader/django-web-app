@@ -1,0 +1,11 @@
+# listings/templates/listings/contact.html
+
+…
+<p>Nous sommes là pour vous aider.</p>
+
+<form action="" method="post" novalidate>
+{% csrf_token %}   {#fonctionnalité de sécurité à intégrer dans le formulaire #}
+{{ form }} {#permet d'empiler les différents champs du formulaires#}
+<input type="submit" value="Envoyer"> {#boutons pour soumettre#}
+</form>
+…
