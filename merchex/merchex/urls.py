@@ -25,4 +25,5 @@ path('bands/', views.band_list), # mise à jour du chemin de la vue
 path("bands/<int:id>/", views.band_detail, name="band-lis"), # ajouter ce motif sous notre autre motif de groupes
 path('about-us/', views.about),
 path('contact-us/', views.contact, name='contact'),
+path('email-sent/', views.email_sent, name='email_sent'),
 ]
